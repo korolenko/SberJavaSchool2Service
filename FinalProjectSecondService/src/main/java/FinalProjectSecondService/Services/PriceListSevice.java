@@ -22,7 +22,7 @@ public class PriceListSevice {
 
     public PriceListEntity create(PriceListDto priceListDto){
         PriceListEntity priceListEntity = new PriceListEntity();
-        priceListEntity.setSparePart(priceListDto.getSparePart());
+        priceListEntity.setSparepartId(priceListDto.getSparepartId());
         priceListEntity.setPrice(priceListDto.getPrice());
         return priceListRepository.save(priceListEntity);
     }
@@ -30,7 +30,7 @@ public class PriceListSevice {
     public PriceListEntity update(PriceListDto priceListDto){
         PriceListEntity priceListEntity = priceListRepository.getOne(priceListDto.getId());
         priceListEntity.setPrice(priceListDto.getPrice());
-        priceListEntity.setSparePart(priceListDto.getSparePart());
+        priceListEntity.setSparepartId(priceListDto.getSparepartId());
         return  priceListRepository.save(priceListEntity);
     }
 

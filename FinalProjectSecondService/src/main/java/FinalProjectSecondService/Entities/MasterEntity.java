@@ -19,4 +19,7 @@ public class MasterEntity {
 
     @Column(name = "mastername")
     private String masterName;
+
+    @Column(name = "buzy")
+    private boolean buzy;
 }

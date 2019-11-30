@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Map;
+
 @Transactional
 @Service
 public class MasterService {
@@ -27,9 +29,13 @@ public class MasterService {
     public MasterEntity update(MasterDTO masterDTO){
         MasterEntity masterEntity = masterRepository.getOne(masterDTO.getId());
         masterEntity.setMasterName(masterDTO.getMasterName());
+        masterEntity.setBuzy(masterDTO.isBuzy());
         return masterRepository.save(masterEntity);
     }
 
+    public Map<Long,String> getFreeMaster(){
+        return masterRepository.getFreeMaster();
+    }
     public void delete(Long id){
         masterRepository.delete(masterRepository.getOne(id));
     }

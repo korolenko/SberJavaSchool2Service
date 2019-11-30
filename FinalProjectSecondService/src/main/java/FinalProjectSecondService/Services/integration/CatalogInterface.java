@@ -22,7 +22,7 @@ public class CatalogInterface {
     private CatalogDto getCatalog(Long id) throws IOException {
 
         final ResponseEntity<String> response =
-                restTemplate.getForEntity(String.format("http://localhost:8080/sparepart/%s", id), String.class);
+                restTemplate.getForEntity(String.format("http://localhost:8081/sparepart/%s", id), String.class);
 
         if (response.getStatusCode().is2xxSuccessful()) {
             return objectMapper.readValue(response.getBody(), CatalogDto.class);

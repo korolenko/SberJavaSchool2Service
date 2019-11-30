@@ -9,5 +9,5 @@ public class CatalogDto {
 
     private Long id;
 
-    private String sparepart;
+    private Long sparepartId;
 }

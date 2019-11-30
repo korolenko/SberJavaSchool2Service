@@ -16,8 +16,8 @@ public class PriceListEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "sparepart")
-    private String sparePart;
+    @Column(name = "sparepartid")
+    private Long sparepartId;
 
     @Column(name = "price")
     private double price;

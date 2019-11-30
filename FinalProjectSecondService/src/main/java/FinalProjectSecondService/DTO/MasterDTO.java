@@ -6,4 +6,5 @@ import lombok.Data;
 public class MasterDTO {
     private Long id;
     private String masterName;
+    private boolean buzy;
 }

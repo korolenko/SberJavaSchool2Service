@@ -7,6 +7,8 @@ import FinalProjectSecondService.Services.MasterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/master")
 public class MasterController {
@@ -24,6 +26,12 @@ public class MasterController {
     @ResponseBody
     public MasterEntity create(@RequestBody MasterDTO masterDTO){
         return masterService.create(masterDTO);
+    }
+
+    @GetMapping("/free")
+    @ResponseBody
+    public Map<Long, String> findFreeMaster(){
+        return masterService.getFreeMaster();
     }
 
     @PutMapping("")

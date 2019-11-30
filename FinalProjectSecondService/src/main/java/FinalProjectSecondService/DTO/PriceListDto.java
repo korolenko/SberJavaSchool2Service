@@ -6,6 +6,6 @@ import lombok.Data;
 public class PriceListDto {
 
     private Long id;
-    private String sparePart;
+    private Long sparepartId;
     private double price;
 }
