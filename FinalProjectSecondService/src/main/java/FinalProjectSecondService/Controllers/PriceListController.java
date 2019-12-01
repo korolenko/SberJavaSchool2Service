@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/pricelist")
@@ -38,6 +39,12 @@ public class PriceListController {
     public Double getPrice(@RequestBody List<Long> ids) {
 
         return priceListSevice.getPrice(ids);
+    }
+
+    @PostMapping("/getSelected")
+    @ResponseBody
+    public Map<String,String> getSparepartsWithPrice(@RequestBody List<Long> ids){
+        return priceListSevice.getSparepartsWithPriceids(ids);
     }
 
 

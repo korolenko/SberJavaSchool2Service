@@ -10,9 +10,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class PriceListConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/pricelist/price/**")
+        registry.addMapping("/pricelist/**")
                 .allowedOrigins("http://localhost")
-                .allowedMethods("PUT", "DELETE", "GET")
+                .allowedMethods("PUT", "DELETE", "GET","POST")
                 .allowedHeaders("header1", "header2", "header3")
                 .exposedHeaders("header1", "header2")
                 .allowCredentials(false).maxAge(3600);

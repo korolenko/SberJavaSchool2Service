@@ -33,7 +33,7 @@ public class MasterService {
         return masterRepository.save(masterEntity);
     }
 
-    public Map<Long,String> getFreeMaster(){
+    public Map<String,String> getFreeMaster(){
         return masterRepository.getFreeMaster();
     }
     public void delete(Long id){

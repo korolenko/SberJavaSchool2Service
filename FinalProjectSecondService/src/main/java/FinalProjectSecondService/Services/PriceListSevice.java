@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 @Transactional
 @Service
@@ -39,6 +40,10 @@ public class PriceListSevice {
         return priceListRepository.findAllById(ids).stream()
                 .map(PriceListEntity::getPrice)
                 .reduce((a,b) -> a + b).orElse(.0);
+    }
+
+    public Map<String,String> getSparepartsWithPriceids(List<Long> ids){
+        return priceListRepository.getSparepartsWithPrice(ids);
     }
 
     public void delete(Long id){

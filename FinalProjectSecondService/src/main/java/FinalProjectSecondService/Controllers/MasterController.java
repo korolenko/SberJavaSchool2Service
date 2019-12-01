@@ -7,6 +7,7 @@ import FinalProjectSecondService.Services.MasterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Map;
 
 @RestController
@@ -30,7 +31,7 @@ public class MasterController {
 
     @GetMapping("/free")
     @ResponseBody
-    public Map<Long, String> findFreeMaster(){
+    public Map<String, String> findFreeMaster(){
         return masterService.getFreeMaster();
     }
 
@@ -39,6 +40,7 @@ public class MasterController {
     public MasterEntity update(@RequestBody MasterDTO masterDTO){
         return  masterService.update(masterDTO);
     }
+
     @DeleteMapping("/{id}")
     @ResponseBody
     public void delete(@PathVariable Long id){

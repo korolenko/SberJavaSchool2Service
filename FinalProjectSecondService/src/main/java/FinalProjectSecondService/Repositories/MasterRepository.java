@@ -9,10 +9,10 @@ import java.util.Map;
 
 @Repository
 public interface MasterRepository extends JpaRepository<MasterEntity, Long> {
-    @Query(value="select m.id, m.mastername\n" +
-            "from \"order\".master m\n" +
+    @Query(value="select cast(m.id as VARCHAR(20)) as \"id\", m.mastername\n" +
+            " from \"order\".master m\n" +
             "where buzy is false\n" +
             "order by id\n" +
             "limit 1", nativeQuery = true)
-    public Map<Long,String> getFreeMaster();
+    public Map<String,String> getFreeMaster();
 }
