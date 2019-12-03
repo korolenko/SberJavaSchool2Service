@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Map;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 @Transactional
 @Service
 public class ClientService {
@@ -16,6 +20,11 @@ public class ClientService {
 
     public ClientEntity findById(Long id){
         return clientRepository.getOne(id);
+    }
+
+    public Map<Long,String> findAll(){
+        return clientRepository.findAll().stream()
+                .collect(Collectors.toMap(ClientEntity::getId,ClientEntity::getName));
     }
 
     public ClientEntity create(ClientDTO clientDTO){

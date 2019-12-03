@@ -6,6 +6,8 @@ import FinalProjectSecondService.Services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/client")
 public class ClientController {
@@ -35,5 +37,11 @@ public class ClientController {
     @ResponseBody
     public void delete(@PathVariable Long id){
          clientService.delete(id);
+    }
+
+    @GetMapping("/all")
+    @ResponseBody
+    public Map<Long,String> getAll(){
+        return clientService.findAll();
     }
 }

@@ -19,6 +19,9 @@ public class PriceListEntity {
     @Column(name = "sparepartid")
     private Long sparepartId;
 
+    @Column(name = "sparepartname")
+    private String sparepartName;
+
     @Column(name = "price")
     private double price;
 }
