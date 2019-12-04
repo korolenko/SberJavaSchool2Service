@@ -21,14 +21,14 @@ public class RepairListService {
 
     public RepairListEntity create(RepairListDTO repairListDTO){
         RepairListEntity repairListEntity = new RepairListEntity();
-        repairListEntity.setOrderId(repairListDTO.getOrderId());
+        repairListEntity.setOrderUUID(repairListDTO.getOrderUUID());
         repairListEntity.setPricelistId(repairListDTO.getPricelistId());
         return repairListRepository.save(repairListEntity);
     }
 
     public RepairListEntity update(RepairListDTO repairListDTO){
         RepairListEntity repairListEntity = repairListRepository.getOne(repairListDTO.getId());
-        repairListEntity.setOrderId(repairListDTO.getOrderId());
+        repairListEntity.setOrderUUID(repairListDTO.getOrderUUID());
         repairListEntity.setPricelistId(repairListDTO.getPricelistId());
         return repairListRepository.save(repairListEntity);
     }

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -18,13 +19,8 @@ public class RepairListEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "orderid")
-    private Long orderId;
-
-//    @OneToMany
-//    @JoinColumn(name = "orderid")
-////    @Column(name = "orderid")
-//    private OrderEntity orderId;
+    @Column(name = "orderuuid")
+    private UUID orderUUID;
 
     @Column(name = "pricelistid")
     private Long pricelistId;

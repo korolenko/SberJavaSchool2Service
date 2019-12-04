@@ -21,6 +21,12 @@ public class ClientController {
         return clientService.findById(id);
     }
 
+    @PostMapping("/getidbyname")
+    @ResponseBody
+    public Integer getIdByName(@RequestBody ClientDTO clientDTO){
+        return clientService.getIdByName(clientDTO);
+    }
+
     @PostMapping("")
     @ResponseBody
     public ClientEntity create(@RequestBody ClientDTO clientDTO){

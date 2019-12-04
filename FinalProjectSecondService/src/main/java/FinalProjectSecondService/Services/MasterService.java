@@ -30,7 +30,6 @@ public class MasterService {
         MasterEntity masterEntity = masterRepository.getOne(masterDTO.getId());
         masterEntity.setMasterName(masterDTO.getMasterName());
         masterEntity.setBuzy(masterDTO.isBuzy());
-        masterRepository.findOne()
         return masterRepository.save(masterEntity);
     }
 

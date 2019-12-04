@@ -3,10 +3,12 @@ package FinalProjectSecondService.DTO;
 
 import lombok.Data;
 
+import java.util.UUID;
+
 @Data
 public class RepairListDTO {
 
     private Long id;
-    private Long orderId;
+    private UUID orderUUID;
     private Long pricelistId;
 }

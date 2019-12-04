@@ -22,6 +22,10 @@ public class ClientService {
         return clientRepository.getOne(id);
     }
 
+    public Integer getIdByName(ClientDTO clientDTO){
+        return clientRepository.getIdByName(clientDTO.getName());
+    }
+
     public Map<Long,String> findAll(){
         return clientRepository.findAll().stream()
                 .collect(Collectors.toMap(ClientEntity::getId,ClientEntity::getName));
